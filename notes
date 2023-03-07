@@ -1,0 +1,25 @@
+Inter fonts
+17px 4px wise
+
+Colors
+	- teal: #02B2BA
+	- yellow: #D9BA2C
+	- purple: #ED4135
+	- darkblue: #14597A
+	- background: linear-gradient(138.11deg, #FEF452 0%, #942F70 121.92%)
+
+Select UI Library
+	mantine: 
+		+ good form control, good default
+		+ have enough input components to build
+		- hard to customize to fit figma's design(colors, spacing, custom input)
+	radix: 
+		+ headless, easy to fit figma's design
+		+ comes with nice a11y
+		+ have checkbox, have radio groups
+		+ should pair with tailwinds to build ultilities
+		- no calendar (can be fixed with @mantine/calendar)
+
+=> headless radix + tailwindcss + @mantine/form+calendar
+
+
