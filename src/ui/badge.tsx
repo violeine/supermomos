@@ -11,7 +11,7 @@ export const Badge = ({ onClose, primary, content, onClick }: Props) => {
     ? "text-purple bg-[#f4ebff]"
     : "text-gray-700 bg-gray-100";
   return (
-    <button
+    <div
       className={`flex items-center text-sm px-2 rounded-full font-medium gap-1 ${badgeColor}`}
       onClick={onClick}
     >
@@ -21,6 +21,6 @@ export const Badge = ({ onClose, primary, content, onClick }: Props) => {
           <Close size={12} />
         </button>
       ) : null}
-    </button>
+    </div>
   );
 };
