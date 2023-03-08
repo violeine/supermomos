@@ -1,6 +1,6 @@
 import { UseFormReturnType } from "@mantine/form";
-import { Form } from "@/types";
-import { Badge } from "./badge";
+import { Form } from "./types";
+import { Badge } from "@/ui/badge";
 
 interface Props {
   form: UseFormReturnType<Form>;

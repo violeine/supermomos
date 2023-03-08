@@ -14,7 +14,7 @@ export const createSocial = async (form: Form) => {
 };
 
 export const _createSocial = async (form: Form) => {
-  const response = await fetch("/api/hello", {
+  const response = await fetch("/api/create", {
     headers: {
       "Content-Type": "application/json",
     },

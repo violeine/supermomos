@@ -1,8 +1,8 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import { useState } from "react";
-import { Picture } from "./icons";
+import { Picture } from "@/ui/icons";
 import { UseFormReturnType } from "@mantine/form";
-import { Form } from "@/types";
+import { Form } from "./types";
 
 const BANNER_URLS = [
   "https://supermomos-app-resources-us.s3.amazonaws.com/Images/SocialBanner/banner_1.jpg",

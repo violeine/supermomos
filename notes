@@ -1,5 +1,5 @@
 Inter fonts
-17px 4px wise
+16px 4px wise
 
 Colors
 	- teal: #02B2BA
@@ -18,8 +18,8 @@ Select UI Library
 		+ comes with nice a11y
 		+ have checkbox, have radio groups
 		+ should pair with tailwinds to build ultilities
-		- no calendar (can be fixed with @mantine/calendar)
+		- no calendar (can be fixed with @mantine/calendar)dd
 
-=> headless radix + tailwindcss + @mantine/form+calendar
+=> headless radix + tailwindcss + @mantine/form
 
 

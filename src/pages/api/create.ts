@@ -1,5 +1,5 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import { createSocial } from "@/fetch";
+import { createSocial } from "@/features/create-social/fetch";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(
