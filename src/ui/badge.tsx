@@ -12,7 +12,7 @@ export const Badge = ({ onClose, primary, content, onClick }: Props) => {
     : "text-gray-700 bg-gray-100";
   return (
     <div
-      className={`flex items-center text-sm px-2 rounded-full font-medium gap-1 ${badgeColor}`}
+      className={`cursor-pointer flex items-center text-sm px-2 rounded-full font-medium gap-1 ${badgeColor}`}
       onClick={onClick}
     >
       <span>{content}</span>

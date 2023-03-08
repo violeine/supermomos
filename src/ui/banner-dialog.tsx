@@ -16,9 +16,11 @@ const BANNER_URLS = [
   "https://supermomos-app-resources-us.s3.amazonaws.com/Images/SocialBanner/banner_9.jpg",
   "https://supermomos-app-resources-us.s3.amazonaws.com/Images/SocialBanner/banner_10.jpg",
 ];
+
 interface Props {
   form: UseFormReturnType<Form>;
 }
+
 export const BannerDialog = ({ form }: Props) => {
   const [container, setContainer] = useState<HTMLDivElement | null>(null);
   const [open, setOpen] = useState(false);
@@ -36,8 +38,8 @@ export const BannerDialog = ({ form }: Props) => {
           </button>
         </Dialog.Trigger>
         <Dialog.Portal container={container}>
-          <Dialog.Overlay className="bg-gray-600/70 fixed inset-0" />
-          <Dialog.Content className="font-sans bg-white fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[75vh] rounded shadow p-3 flex flex-col">
+          <Dialog.Overlay className="bg-gray-600/70 fixed inset-0 z-10" />
+          <Dialog.Content className="font-sans bg-white fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[75vh] rounded shadow p-3 flex flex-col z-10">
             <Dialog.Title className="font-medium text-gray-700 text-lg pb-2">
               Choose a banner
             </Dialog.Title>
@@ -58,7 +60,7 @@ export const BannerDialog = ({ form }: Props) => {
               <Dialog.Close asChild>
                 <button
                   type="button"
-                  className="bg-gray-100 text-gray-700 px-2 py-1 rounded shadow-sm font-medium"
+                  className="cursor-pointer bg-gray-100 text-gray-700 px-2 py-1 rounded shadow-sm font-medium"
                 >
                   Close
                 </button>
@@ -70,7 +72,7 @@ export const BannerDialog = ({ form }: Props) => {
                     setOpen(false);
                   }}
                   type="button"
-                  className="bg-yellow text-purple px-2 py-1 rounded-sm shadow font-medium"
+                  className="cursor-pointer bg-yellow text-purple px-2 py-1 rounded-sm shadow font-medium"
                 >
                   Save
                 </button>

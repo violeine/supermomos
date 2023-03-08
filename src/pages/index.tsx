@@ -11,6 +11,8 @@ import { BannerDialog } from "@/ui/banner-dialog";
 import { Form } from "@/types";
 import { TagSelect } from "@/ui/tag-select";
 import { Input } from "@/ui/input";
+import { _createSocial } from "@/fetch";
+import { toast } from "sonner";
 
 export default function Home() {
   const form = useForm<Form>({
@@ -39,7 +41,18 @@ export default function Home() {
     },
   });
   return (
-    <form onSubmit={form.onSubmit((v) => console.log(v))}>
+    <form
+      onSubmit={form.onSubmit(async (v) => {
+        try {
+          const r = await _createSocial(v);
+          toast.success("Create social success!");
+          console.log("create success with ", r);
+        } catch (err) {
+          toast.error("Something went wrong!");
+          console.error(err);
+        }
+      })}
+    >
       <div className="mt-24 pl-8">
         <section className="flex gap-6">
           <section className="pt-8 w-5/12">
@@ -182,13 +195,16 @@ export default function Home() {
               id="isManualApprove"
               {...form.getInputProps("isManualApprove")}
             />
-            <Label.Root htmlFor="isManualApprove">
+            <Label.Root
+              htmlFor="isManualApprove"
+              className="cursor-pointer text-gray-700"
+            >
               I want to approve attendees
             </Label.Root>
           </div>
           <div className="space-y-2">
             <div className="flex items-baseline gap-4 ">
-              <Label.Root className="text-gray-700 font-medium">
+              <Label.Root className=" text-gray-700 font-medium">
                 Privacy
               </Label.Root>
               <span className="text-sm text-red-700">
@@ -204,7 +220,7 @@ export default function Home() {
                 <RadioGroup.Item value="Public" id="public" />
                 <Label.Root
                   htmlFor="public"
-                  className="text-gray-600 font-light"
+                  className="cursor-pointer text-gray-600 font-light"
                 >
                   Public
                 </Label.Root>
@@ -213,7 +229,7 @@ export default function Home() {
                 <RadioGroup.Item value="curated_audience" id="curated" />
                 <Label.Root
                   htmlFor="curated"
-                  className="text-gray-600 font-light"
+                  className="cursor-pointer text-gray-600 font-light"
                 >
                   Curated Audience
                 </Label.Root>
@@ -222,7 +238,7 @@ export default function Home() {
                 <RadioGroup.Item value="community_only" id="community" />
                 <Label.Root
                   htmlFor="community"
-                  className="text-gray-600 font-light"
+                  className="cursor-pointer text-gray-600 font-light"
                 >
                   Community Only
                 </Label.Root>
@@ -242,7 +258,7 @@ export default function Home() {
         </section>
         <input
           type="submit"
-          className="w-1/2 mt-8 bg-yellow text-purple h-12 rounded font-semibold uppercase shadow-sm"
+          className="cursor-pointer w-1/2 mt-8 bg-yellow text-purple h-12 rounded font-semibold uppercase shadow-sm"
           value="create social"
         />
       </div>

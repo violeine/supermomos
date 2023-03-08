@@ -7,7 +7,7 @@ const RadioGroupItem = React.forwardRef<
 >((props, forwardRef) => {
   return (
     <RadixRadioGroup.Item
-      className="w-5 h-5 rounded-full border-gray-300 border 
+      className="w-5 h-5 rounded-full border-gray-300 border cursor-pointer
       hover:bg-[#f4ebff] hover:border-purple 
       data-[state=checked]:bg-[#f4ebff] data-[state=checked]:border-purple"
       {...props}
